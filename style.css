@@ -339,6 +339,7 @@ label {
   color: var(--Cool-gray);
   text-decoration: underline;
   font-weight: 500;
+  padding: 15px 0;
 }
 .add-ons-summery {
   margin-top: 20px;
