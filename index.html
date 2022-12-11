@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" async></script>
+    <title>Multi Step Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="side-nav">
+          <ul class="nav-items">
+            <li>
+              <span class="step-num step-num-1">1</span>
+              <div class="step-info">
+                <p class="step-info-order">step 1</p>
+                <p class="step-info-title">your info</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num step-num-2">2</span>
+              <div class="step-info">
+                <p class="step-info-order">step 2</p>
+                <p class="step-info-title">select plan</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num step-num-3">3</span>
+              <div class="step-info">
+                <p class="step-info-order">step 3</p>
+                <p class="step-info-title">add-ons</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num step-num-4">4</span>
+              <div class="step-info">
+                <p class="step-info-order">step 4</p>
+                <p class="step-info-title">summary</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="info-wrapper">
+          <div class="information">
+            <section class="personal-info hidden">
+              <h1 class="section-title">Personal info</h1>
+              <p class="sub-title">
+                Please provide your name, email address, and phone number,
+              </p>
+              <div class="personal-form">
+                <div class="input-header">
+                  <label for="user-name" class="input-label">Name</label>
+                  <span class="error-message name-error-message hidden"
+                    >This field is required</span
+                  >
+                </div>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="user-name"
+                  placeholder="e.g. Samah Abu Laymun"
+                 
+                />
+
+                <div class="input-header">
+                  <label for="user-email" class="input-label"
+                    >Email Address</label
+                  >
+                  <span class="error-message email-error-message hidden"
+                    >This field is required</span
+                  >
+                </div>
+                <input
+                  class="form-control"
+                  type="email"
+                  id="user-email"
+                  placeholder="e.g. samah_abu_laymun@hotmail.com"
+                  
+                />
+                <div class="input-header">
+                  <label for="user-phone" class="input-label"
+                    >Phone Number</label
+                  >
+                  <span class="error-message phone-error-message hidden"
+                    >This field is required</span
+                  >
+                </div>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="user-phone"
+                  placeholder="e.g. 0568481919"
+                  
+                />
+              </div>
+            </section>
+            <section class="personal-plan hidden">
+              <h1 class="section-title">Select your plan</h1>
+              <p class="sub-title">
+                You have the option of monthly or yearly billing.
+              </p>
+              <div class="plan-form">
+                <div>
+                  <input
+                    type="radio"
+                    checked
+                    id="arcade"
+                    value="arcade"
+                    class="hidden"
+                    name="plan"
+                  />
+                  <label for="arcade" class="plan">
+                    <img src="assets/images/icon-arcade.svg" />
+                    <div>
+                      <p class="plan-title">Arcade</p>
+                      <p class="plan-monthly">$9/mo</p>
+                      <p class="plan-per-year hidden">$90/yr</p>
+                      <p class="plan-yearly hidden">2 month free</p>
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="advanced"
+                    value="advanced"
+                    class="hidden"
+                    name="plan"
+                  />
+                  <label for="advanced" class="plan">
+                    <img src="assets/images/icon-advanced.svg" />
+                    <div>
+                      <p class="plan-title">Advanced</p>
+                      <p class="plan-monthly">$12/mo</p>
+                      <p class="plan-per-year hidden">$120/yr</p>
+                      <p class="plan-yearly hidden">2 month free</p>
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="pro"
+                    value="pro"
+                    class="hidden"
+                    name="plan"
+                  />
+                  <label for="pro" class="plan">
+                    <img src="assets/images/icon-pro.svg" />
+                    <div>
+                      <p class="plan-title">Pro</p>
+                      <p class="plan-monthly">$15/mo</p>
+                      <p class="plan-per-year hidden">$150/yr</p>
+                      <p class="plan-yearly hidden">2 month free</p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="switch-wrapper">
+                <p class="monthly">Monthly</p>
+                <input type="checkbox" id="switch" class="checkbox" />
+                <label for="switch" class="toggle"></label>
+                <p class="yearly">Yearly</p>
+              </div>
+            </section>
+            <section class="add-ons hidden">
+              <h1 class="section-title">Pick add-ons</h1>
+              <p class="sub-title">
+                Add-ons help enhance your gaming experience.
+              </p>
+              <label class="add-ons-item" for="online-services">
+                <div class="right">
+                  <input
+                    type="checkbox"
+                    id="online-services"
+                    value="online services"
+                    name="add-ons"
+                  />
+                  <div class="add-ons-item-info">
+                    <p class="title">Online services</p>
+                    <p class="discription">Access to multiplayer games</p>
+                  </div>
+                </div>
+                <p class="amount add-ons-monthly">+$1/mo</p>
+                <p class="amount add-ons-yearly">+$10/yr</p>
+              </label>
+
+              <label class="add-ons-item" for="larger-storage">
+                <div class="right">
+                  <input
+                    type="checkbox"
+                    id="larger-storage"
+                    value="larger storage"
+                    name="add-ons"
+                  />
+                  <div class="add-ons-item-info">
+                    <p class="title">Larger storage</p>
+                    <p class="discription">Extra 1TB of cloud save</p>
+                  </div>
+                </div>
+                <p class="amount add-ons-monthly">+$2/mo</p>
+                <p class="amount add-ons-yearly">+$20/yr</p>
+              </label>
+
+              <label class="add-ons-item" for="customize-profile">
+                <div class="right">
+                  <input
+                    type="checkbox"
+                    id="customize-profile"
+                    value="customize profile"
+                    name="add-ons"
+                  />
+                  <div class="add-ons-item-info">
+                    <p class="title">Customizable profile</p>
+                    <p class="discription">custom theme on your profile</p>
+                  </div>
+                </div>
+                <p class="amount add-ons-monthly">+$2/mo</p>
+                <p class="amount add-ons-yearly">+$20/yr</p>
+              </label>
+            </section>
+            <section class="finishing-up hidden">
+              <h1 class="section-title">Finishing up</h1>
+              <p class="sub-title">
+                Double-check everything looks Ok before confirming.
+              </p>
+              <div class="prices-summery">
+                <div class="summery-plan">
+                  <div class="left">
+                    <p class="summery-plan-title">Arcade (yearly)</p>
+                    <a class="btn summery-plan-change">Change</a>
+                  </div>
+                  <p class="summery-plan-price">$90/yr</p>
+                </div>
+                <div class="add-ons-summery">
+                  <!-- <div class="add-ons-summery-item">
+                  <span class="add-ons-summery-item-title">online services</span>
+                  <span  class="add-ons-summery-item-price">+$10/yr</span>
+                 </div>
+                  <div class="add-ons-summery-item">
+                  <span class="add-ons-summery-item-title">online services</span>
+                  <span  class="add-ons-summery-item-price">+$10/yr</span>
+                 </div> -->
+                </div>
+              </div>
+              <div class="total-price">
+                <p class="total">Total (per year)</p>
+                <p class="price">$120/yr</p>
+              </div>
+            </section>
+            <section class="confirm-section">
+              <div class="confirm-wrapper">
+                <div>
+                  <div>
+                    <img src="assets/images/icon-thank-you.svg" />
+                  </div>
+                  <h2>Thank you!</h2>
+                  <p>
+                    Thanks for confirming your subscription! We hope you have
+                    fun using our platform. If you ever need support, please
+                    feel free to email us at support@loremgaming.com.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="footer">
+            <div class="btn-group">
+              <button class="btn back-btn">Go Back</button>
+              <button class="btn next-btn">Next Step</button>
+              <button class="btn confirm-btn">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

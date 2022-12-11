@@ -1,0 +1,617 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap");
+:root {
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  background-color: hsl(217 100% 97%);
+ 
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  background-color: var(--White);
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 940px;
+  width: 100%;
+  height: 608px;
+  margin: 100px auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 9px 9px 2px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  display: flex;
+}
+.side-nav {
+  flex: 0 0 33%;
+  width: 100%;
+  background-image: url(assets/images/bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  padding: 30px;
+  border-radius: 15px;
+}
+.nav-items {
+  list-style: none;
+}
+.nav-items li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.nav-items li .step-num {
+  color: var(--White);
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--Light-gray);
+  margin-right: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+.nav-items li .step-info .step-info-order {
+  text-transform: uppercase;
+  color: var(--Cool-gray);
+  margin-bottom: 7px;
+}
+.nav-items li .step-info .step-info-title {
+  text-transform: uppercase;
+  color: var(--White);
+  font-weight: 500;
+  font-size: 17px;
+}
+.nav-items li .step-num.hover {
+  background-color: var(--Light-blue);
+  color: var(--Marine-blue);
+}
+
+.confirm-section {
+  margin: 25% auto;
+}
+.section-title {
+  font-size: 35px;
+  font-weight: 700;
+  color: var(--Marine-blue);
+  margin-bottom: 15px;
+}
+.sub-title {
+  color: var(--Cool-gray);
+  margin-bottom: 30px;
+}
+.personal-form {
+  width: 100%;
+}
+label {
+  color: var(--Marine-blue);
+}
+.form-control {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--Cool-gray);
+  padding: 17px 20px;
+  margin: 5px 0 20px;
+  outline: none;
+  transition: 0.3s;
+}
+.form-control:focus {
+  border: 2px solid var(--Purplish-blue);
+}
+.footer {
+  position: absolute;
+  bottom: 20px;
+  right: 70px;
+  left: 70px;
+}
+.info-wrapper {
+  padding: 40px 70px;
+  flex: 0 0 66%;
+  position: relative;
+}
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+   border-radius: 10px;
+  padding: 15px 30px;
+  transition: 0.3s;
+}
+.back-btn {
+  background-color: transparent !important;
+  color: var(--Cool-gray);
+  font-weight: 600;
+   padding: 15px 0;
+}
+.back-btn:hover {
+  color: var(--Marine-blue);
+}
+.next-btn {
+  margin-left: auto;
+  background-color: var(--Marine-blue);
+  color: var(--Magnolia);
+}
+.next-btn:hover {
+  opacity: 0.9;
+}
+.confirm-btn {
+  background-color: var(--Purplish-blue);
+  color: var(--Magnolia);
+  
+}
+.confirm-btn:hover {
+  opacity: 0.7;
+}
+.hidden {
+  display: none;
+}
+.input-header {
+  display: flex;
+  justify-content: space-between;
+}
+.error-message {
+  color: red;
+  font-weight: 500;
+}
+.plan-form {
+  display: flex;
+  width: 100%;
+  gap: 17px;
+  margin-bottom: 20px;
+}
+.plan-form div {
+  flex: 0 0 30.5%;
+  width: 100%;
+}
+.plan-form div .plan {
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+  padding: 16px 12px;
+  border: 1px solid var(--Cool-gray);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 190px;
+
+  cursor: pointer;
+}
+.plan-title {
+  color: var(--Marine-blue);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.plan-monthly {
+  color: var(--Cool-gray);
+  margin-bottom: 5px;
+}
+.plan-per-year {
+  color: var(--Cool-gray);
+  margin-bottom: 5px;
+}
+.plan-yearly {
+  color: var(--Marine-blue);
+}
+.plan-form div input[type="radio"]:checked + label,
+.plan-form div .plan:hover {
+  background-color: #473dff0d;
+  border: 1px solid var(--Purplish-blue);
+}
+.switch-wrapper {
+  width: 100%;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: var(--Magnolia);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+}
+.checkbox {
+  display: none;
+}
+.yearly {
+  color: var(--Cool-gray);
+}
+.monthly {
+  color: var(--Marine-blue);
+  font-weight: 500;
+}
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background-color: var(--Marine-blue);
+  border-radius: 30px;
+}
+
+.toggle:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--White);
+  top: 3px;
+  left: 2px;
+  transition: all 0.5s;
+}
+.checkbox:checked + .toggle::after {
+  left: 30px;
+}
+.checkbox:checked ~ p.yearly {
+  color: var(--Marine-blue);
+  font-weight: 500;
+}
+.add-ons-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid var(--Cool-gray);
+  padding: 15px 25px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.add-ons-item:hover {
+  border: 2px solid var(--Purplish-blue);
+  background-color: #473dff0d;
+}
+.add-ons-item.add-ons-checked{
+  border: 2px solid var(--Purplish-blue);
+  background-color: #473dff0d;
+}
+.add-ons-item .right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-ons-item .right input {
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+.add-ons-item .right .add-ons-item-info .title {
+  color: var(--Marine-blue);
+  font-weight: 700;
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+.add-ons-item .right .add-ons-item-info .discription {
+  color: var(--Cool-gray);
+  font-weight: 500;
+}
+.add-ons-item .amount {
+  color: var(--Purplish-blue);
+  font-weight: 700;
+  font-size: 18px;
+}
+.prices-summery {
+  background-color: var(--Magnolia);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.prices-summery .summery-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--Cool-gray);
+  padding-bottom: 20px;
+}
+.prices-summery .summery-plan .left .summery-plan-title,
+.prices-summery .summery-plan .summery-plan-price {
+  color: var(--Marine-blue);
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+.prices-summery .summery-plan .left .summery-plan-change {
+  color: var(--Cool-gray);
+  text-decoration: underline;
+  font-weight: 500;
+}
+.add-ons-summery {
+  margin-top: 20px;
+}
+.add-ons-summery .add-ons-summery-item {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-ons-summery .add-ons-summery-item .add-ons-summery-item-title {
+  color: var(--Cool-gray);
+  text-transform: capitalize;
+  font-size: 16px;
+}
+.add-ons-summery .add-ons-summery-item .add-ons-summery-item-price {
+  color: var(--Marine-blue);
+}
+.total-price {
+  padding: 30px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.total-price .total {
+  color: var(--Cool-gray);
+  font-weight: 500;
+}
+.total-price .price {
+  color: var(--Purplish-blue);
+  font-weight: 600;
+  font-size: 19px;
+}
+.confirm-section {
+  width: 100%;
+  height: 100%;
+}
+.confirm-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.confirm-wrapper div div {
+  width: 100%;
+  margin-bottom: 25px;
+  display: block;
+  text-align: center;
+}
+.confirm-wrapper h2 {
+  width: 100%;
+  margin-bottom: 25px;
+  color: var(--Marine-blue);
+  text-align: center;
+  font-size: 35px;
+}
+.confirm-wrapper p {
+  width: 100%;
+  margin-bottom: 25px;
+  color: var(--Cool-gray);
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+@media (max-width: 914px) {
+  .btn {
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 15px 25px;
+}
+.back-btn{
+  padding: 15px 0;
+}
+  .wrapper {
+    background-color: transparent !important;
+    flex-wrap: wrap;
+    border-radius: 0;
+    padding: 0;
+    width: 100%;
+    height: 700px;
+    margin: 0;
+    box-shadow: none;
+  }
+  .side-nav {
+    flex: 0 0 100%;
+    width: 100%;
+    background-image: url(assets/images/bg-sidebar-mobile.svg);
+    background-size: cover;
+    padding: 40px;
+    border-radius: 0;
+    height: 200px;
+    position: relative;
+  }
+  .info-wrapper {
+    padding: 0;
+    flex: 0 0 100%;
+    width: 100%;
+    position: absolute;
+    top: 12%;
+  }
+  .information {
+    padding: 30px 20px;
+    background-color: var(--White);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 9px 9px 2px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    margin: 20px 20px 200px;
+  }
+  .nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-items li {
+    display: inline-block;
+  }
+  .nav-items li .step-info {
+    display: none;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin-top: 200px;
+    background-color: var(--White);
+    padding: 20px 30px;
+  }
+  .plan-form {
+    flex-wrap: wrap;
+  }
+  .plan-form div {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  .plan-form div .plan {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px 40px;
+    border: 1px solid var(--Cool-gray);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 70px;
+    
+  }
+  .plan-title {
+  font-size: 14px;
+}
+.plan-monthly {
+  font-size: 14px;
+}
+.plan-per-year {
+   font-size: 14px;
+}
+.plan-yearly {
+  font-size: 14px;
+}
+  .plan-form div .plan img {
+    margin-right: 20px;
+  }
+  .section-title {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--Marine-blue);
+  margin-bottom: 15px;
+}
+  .confirm-section {
+    height: 300px;
+  }
+  .form-control {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid var(--Cool-gray);
+  padding: 10px 20px 10px;
+  margin: 5px 0 15px;
+  outline: none;
+  transition: 0.3s;
+}
+.nav-items li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  
+}
+/* .nav-items {
+  background-color: red;
+} */
+.nav-items li .step-num {
+  display: flex;
+  align-items: center;
+  color: var(--White);
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--Light-gray);
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 12px;
+}
+.add-ons-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid var(--Cool-gray);
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.add-ons-item .right .add-ons-item-info .title {
+  color: var(--Marine-blue);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.add-ons-item .right .add-ons-item-info .discription {
+  color: var(--Cool-gray);
+  font-weight: 500;
+  font-size: 12px;
+}
+.add-ons-item .amount {
+  color: var(--Purplish-blue);
+  font-weight: 700;
+  font-size: 12px;
+}
+.add-ons-item .right input {
+  margin-right: 12px;
+  width: 17px;
+  height: 17px;
+}
+.prices-summery {
+  padding: 15px;
+
+}
+
+.prices-summery .summery-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--Cool-gray);
+  padding-bottom: 20px;
+}
+.prices-summery .summery-plan .left .summery-plan-title,
+.prices-summery .summery-plan .summery-plan-price {
+  font-size: 14px;
+}
+.prices-summery .summery-plan .left .summery-plan-change {
+ font-size: 14px;
+}
+.add-ons-summery {
+  margin-top: 20px;
+}
+
+.add-ons-summery .add-ons-summery-item .add-ons-summery-item-title {
+  font-size: 14px;
+}
+.add-ons-summery .add-ons-summery-item .add-ons-summery-item-price {
+  font-size: 14px;
+}
+  .total-price .total {
+  font-size: 14px;
+}
+.total-price .price {
+  font-size: 14px;
+}
+.confirm-wrapper h2 {
+
+  font-size: 25px;
+}
+}
