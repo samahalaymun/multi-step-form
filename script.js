@@ -15,11 +15,9 @@ const planPerYearly = document.querySelectorAll(".plan-per-year");
 const addOnsMonthly = document.querySelectorAll(".add-ons-monthly");
 const addOnsYearly = document.querySelectorAll(".add-ons-yearly");
 const changePrice = document.querySelector(".summery-plan-change");
-const stepNum1 = document.querySelector(".step-num-1");
-const stepNum2 = document.querySelector(".step-num-2");
-const stepNum3 = document.querySelector(".step-num-3");
-const stepNum4 = document.querySelector(".step-num-4");
+const stepNum = document.querySelectorAll(".step-num");
 const addOnsSummery = document.querySelector(".add-ons-summery");
+const allSection=document.querySelectorAll("section")
 
 let counter = 0;
 let planType;
@@ -110,42 +108,24 @@ function indicateBtns() {
     backBtn.classList.add("hidden");
     confirmBtn.classList.add("hidden");
     nextBtn.classList.remove("hidden");
-  } else if (counter === 1 || counter === 2) {
+  } else if (counter === 1 || counter === 2){
     backBtn.classList.remove("hidden");
     confirmBtn.classList.add("hidden");
     nextBtn.classList.remove("hidden");
-  } else if (counter === 3) {
-    backBtn.classList.remove("hidden");
+  } else if (counter === 3){
+   backBtn.classList.remove("hidden");
     confirmBtn.classList.remove("hidden");
     nextBtn.classList.add("hidden");
   }
 }
 function indicateSections() {
-  if (counter === 0) {
-    personalInfoSection.classList.remove("hidden");
-    addOnsSection.classList.add("hidden");
-    personalPlanSection.classList.add("hidden");
-    finishingUp.classList.add("hidden");
-    confirmSection.classList.add("hidden");
-  } else if (counter === 1) {
-    personalInfoSection.classList.add("hidden");
-    personalPlanSection.classList.remove("hidden");
-    addOnsSection.classList.add("hidden");
-    finishingUp.classList.add("hidden");
-    confirmSection.classList.add("hidden");
-  } else if (counter === 2) {
-    personalInfoSection.classList.add("hidden");
-    personalPlanSection.classList.add("hidden");
-    addOnsSection.classList.remove("hidden");
-    finishingUp.classList.add("hidden");
-    confirmSection.classList.add("hidden");
-  } else if (counter === 3) {
-    personalInfoSection.classList.add("hidden");
-    personalPlanSection.classList.add("hidden");
-    addOnsSection.classList.add("hidden");
-    finishingUp.classList.remove("hidden");
-    confirmSection.classList.add("hidden");
-  }
+  allSection.forEach((section,id)=>{
+    if(counter === id){
+      section.classList.remove("hidden")
+    }else{
+      section.classList.add("hidden");
+    }
+  })
 }
 
 function handlePersonalSectionValidation() {
@@ -156,59 +136,39 @@ function handlePersonalSectionValidation() {
   const nameError = document.querySelector(".name-error-message");
   const emailError = document.querySelector(".email-error-message");
   const phoneError = document.querySelector(".phone-error-message");
-  if (!firstName.value) {
+  if (!firstName.value.trim()) {
     flag = false;
-    firstName.style.border = "2px solid red";
-    nameError.classList.remove("hidden");
+    setErrorFor(firstName,nameError,'This field is required')
   }
-  if (!email.value) {
+  if (!email.value.trim()) {
     flag = false;
-    email.style.border = "2px solid red";
-    emailError.classList.remove("hidden");
+     setErrorFor(email, emailError,'This field is required');
   }
-  if (!phoneNumber.value) {
+  if (!phoneNumber.value.trim()) {
     flag = false;
-    phoneNumber.style.border = "2px solid red";
-    phoneError.classList.remove("hidden");
+     setErrorFor(phoneNumber, phoneError,'This field is required');
   }
-  if (firstName.value) {
-    firstName.style.border = "1px solid #9699AB";
-    nameError.classList.add("hidden");
+  if (firstName.value.trim()) {
+    removeErrorFrom(firstName, nameError);
   }
-  if (email.value) {
-    email.style.border = "1px solid #9699AB";
-    emailError.classList.add("hidden");
+  if (email.value.trim()) {
+    removeErrorFrom(email, emailError);
   }
-  if (phoneNumber.value) {
-    phoneNumber.style.border = "1px solid #9699AB";
-    phoneError.classList.add("hidden");
+  if (phoneNumber.value.trim()) {
+    removeErrorFrom(phoneNumber, phoneError);
   }
 
   return flag;
 }
 
 function indicateStepNumber() {
-  if (counter === 0) {
-    stepNum1.classList.add("hover");
-    stepNum2.classList.remove("hover");
-    stepNum3.classList.remove("hover");
-    stepNum4.classList.remove("hover");
-  } else if (counter === 1) {
-    stepNum1.classList.remove("hover");
-    stepNum2.classList.add("hover");
-    stepNum3.classList.remove("hover");
-    stepNum4.classList.remove("hover");
-  } else if (counter === 2) {
-    stepNum1.classList.remove("hover");
-    stepNum2.classList.remove("hover");
-    stepNum3.classList.add("hover");
-    stepNum4.classList.remove("hover");
-  } else if (counter === 3) {
-    stepNum1.classList.remove("hover");
-    stepNum2.classList.remove("hover");
-    stepNum3.classList.remove("hover");
-    stepNum4.classList.add("hover");
-  }
+   stepNum.forEach((num,index)=>{
+    if(counter === index){
+       num.classList.add("hover")
+    }else{
+      num.classList.remove("hover")
+    }
+   })
 }
 function selectYourPlanValidation() {
   handlebillingTypeValidation();
@@ -218,7 +178,7 @@ function selectYourPlanValidation() {
       break;
     }
   }
-  if (billingType.checked) {
+  if(billingType.checked){
     type = "yearly";
   } else {
     type = "monthly";
@@ -332,4 +292,13 @@ function displayTotalPrice(price) {
   document.querySelector(".total-price .price").innerHTML = `+$${price}/${
     type === "yearly" ? "yr" : "mo"
   }`;
+}
+function setErrorFor(element,error,message){
+   element.style.border = "2px solid #e74c3c";
+   error.classList.remove("hidden");
+   error.innerText = message;
+}
+function removeErrorFrom(element,error){
+    element.style.border = "1px solid #9699AB";
+    error.classList.add("hidden");
 }
